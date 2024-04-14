@@ -1,7 +1,7 @@
 # Maintainer: Tuxx <tuxx@danktank.nl>
 # Contributor: Tuxx <tuxx@danktank.nl>
 pkgname=wallock
-pkgver=0.0.1
+pkgver=r22.651c017
 pkgrel=1
 pkgdesc="wallock is a wallpaper and lock screen that enables macos like lock screens and wallapers on wayland. It is designed to work with wlroots based wayland compositors (sway, hyprland, etc..)."
 arch=(any)
@@ -22,8 +22,8 @@ md5sums=('SKIP')
 
 pkgver() {
 	cd "$srcdir/${pkgname%-git}"
-	git checkout ${pkgver}
-	printf "%s" "$(git describe --tags)"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+
 }
 
 build() {

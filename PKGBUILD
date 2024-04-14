@@ -21,7 +21,7 @@ noextract=()
 md5sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/${pkgname%-git}"
+    cd "$srcdir/${pkgname%-git}"
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
 
 }
@@ -34,5 +34,5 @@ build() {
 
 package() {
 	cd "$srcdir/${pkgname%-git}"
-    cmake DESTDIR="$pkgdir" --install build 
+    DESTDIR="$pkgdir" cmake --install build 
 }

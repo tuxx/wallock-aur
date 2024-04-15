@@ -1,4 +1,4 @@
-pkgbase = wallock
+pkgbase = wallock-git
 	pkgdesc = wallock is a wallpaper and lock screen that enables macos like lock screens and wallapers on wayland. It is designed to work with wlroots based wayland compositors (sway, hyprland, etc..).
 	pkgver = r22.651c017
 	pkgrel = 1
@@ -18,9 +18,9 @@ pkgbase = wallock
 	depends = wayland
 	depends = mpv
 	depends = mesa
-	provides = wallock
-	conflicts = wallock
+	provides = wallock-git
+	conflicts = wallock-git
 	source = git+https://github.com/dpayne/wallock
 	md5sums = SKIP
 
-pkgname = wallock
+pkgname = wallock-git

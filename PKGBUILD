@@ -1,7 +1,7 @@
 # Maintainer: Tuxx <tuxx@danktank.nl>
 # Contributor: Tuxx <tuxx@danktank.nl>
 pkgname=wallock-git
-pkgver=r22.651c017
+pkgver=r41.6bf9f5e
 pkgrel=1
 pkgdesc="wallock is a wallpaper and lock screen that enables macos like lock screens and wallapers on wayland. It is designed to work with wlroots based wayland compositors (sway, hyprland, etc..)."
 arch=(any)
@@ -14,7 +14,7 @@ provides=("${pkgname}")
 conflicts=("${pkgname}")
 replaces=()
 backup=()
-options=()
+options=('!debug')
 install=
 source=(git+"https://github.com/dpayne/wallock")
 noextract=()
@@ -23,16 +23,15 @@ md5sums=('SKIP')
 pkgver() {
     cd "$srcdir/${pkgname%-git}"
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
-
 }
 
 build() {
-	cd "$srcdir/${pkgname%-git}"
+    cd "$srcdir/${pkgname%-git}"
     cmake -DCMAKE_BUILD_TYPE=Release -B build
     cmake --build build
 }
 
 package() {
-	cd "$srcdir/${pkgname%-git}"
+    cd "$srcdir/${pkgname%-git}"
     DESTDIR="$pkgdir" cmake --install build 
 }

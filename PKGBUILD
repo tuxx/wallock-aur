@@ -5,7 +5,7 @@ pkgver=r41.6bf9f5e
 pkgrel=1
 pkgdesc="wallock is a wallpaper and lock screen that enables macos like lock screens and wallapers on wayland. It is designed to work with wlroots based wayland compositors (sway, hyprland, etc..)."
 arch=(any)
-url="https://github.com/dpayne/wallock"
+url="https://github.com/tuxx/wallock"
 license=('MIT')
 groups=()
 depends=('libdrm' 'otf-firamono-nerd' 'ttf-firacode-nerd' 'cairo' 'wayland' 'mpv' 'mesa')
@@ -16,7 +16,7 @@ replaces=()
 backup=()
 options=('!debug')
 install=
-source=(git+"https://github.com/dpayne/wallock")
+source=(git+"https://github.com/tuxx/wallock")
 noextract=()
 md5sums=('SKIP')
 
